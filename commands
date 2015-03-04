@@ -1,0 +1,35 @@
+#to login into account
+curl -H "content-Type: application/json" -d '{"username":"san14","password":"jose"}' -X POST http://localhost:8080/v1/login
+
+# to add users to db
+curl -i -H "Content-Type: application/json" -X POST -d '{"name":"java7789","username":"san","password":"jose"}' http://localhost:8080/v1/reg
+
+# to add boards in db
+curl -H "Content-Type: application/json" -X POST -d '{"boardname":"map"}' http://localhost:8080/v1/user/user1/board
+
+# to upload pin
+curl -H "Content-Type: application/json" -X POST -d '{"pinurl":"/home/rakesh/Desktop/app/project/v3/img/google_img.jpg"}' http://localhost:8080/v1/user/user1/pin/upload
+
+# to attach the pins
+curl -H "Content-Type: application/json" -X PUT -d '{"pinid":"pin1"}' http://localhost:8080/v1/user/user1/board/board4
+
+# to get all Boards
+curl -X GET http://localhost:8080/v1/boards
+
+# to get all pins
+curl -X GET http://localhost:8080/v1/pins
+
+# to delete the board 
+curl -X DELETE http://localhost:8080/v1/user/user1/board/board5
+
+# to get pins in a board
+curl -X GET http://localhost:8080/v1/boards/board4
+
+#to add comment
+curl -H "Content-Type: application/json" -X POST -d '{"comment":"i am google"}' http://localhost:8080/v1/user/user4/pin/pin4/comment
+
+#to retrieve specific pin details
+curl -X GET http://localhost:8080/v1/pin/pin4
+
+# to get user info
+curl -X GET http://localhost:8080/v1/user/user2
